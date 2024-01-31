@@ -36,5 +36,8 @@ git clone -b openwrt-18.06 https://github.com/tty228/luci-app-serverchan.git fee
 # 修改欢迎banner
 cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
 
+# xfsprogs
+cp -f $GITHUB_WORKSPACE/patch/xfsprogs/Makefile feeds/packages/utils/xfsprogs/Makefile
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
