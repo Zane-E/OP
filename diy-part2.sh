@@ -39,5 +39,9 @@ cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
 # xfsprogs
 cp -f $GITHUB_WORKSPACE/patch/xfsprogs/Makefile feeds/packages/utils/xfsprogs/Makefile
 
+#golang1.22
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
