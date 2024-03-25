@@ -16,7 +16,7 @@
 # poweroff
 git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 
-#主题
+# 主题
 rm -rf feeds/luci/applications/luci-app-argon-config
 rm -rf feeds/kenzo/luci-app-argon-config
 git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
@@ -29,17 +29,14 @@ git clone -b 18.06 https://github.com/SpeedPartner/luci-theme-argon-18.06-patch.
 # 修改概览里时间显示为中文数字
 sed -i 's/os.date()/os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X")/g' package/lean/autocore/files/x86/index.htm
 
-#微信推送
+# 微信推送
 rm -rf feeds/kenzo/luci-app-serverchan
 rm -rf feeds/luci/applications/luci-app-serverchan
 git clone -b openwrt-18.06 https://github.com/tty228/luci-app-serverchan.git feeds/luci/applications/luci-app-serverchan
 # 修改欢迎banner
 cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
 
-# xfsprogs
-cp -f $GITHUB_WORKSPACE/patch/xfsprogs/Makefile feeds/packages/utils/xfsprogs/Makefile
-
-#golang1.22
+# golang1.22
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
