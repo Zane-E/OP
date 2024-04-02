@@ -33,12 +33,13 @@ sed -i 's/os.date()/os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")
 rm -rf feeds/kenzo/luci-app-serverchan
 rm -rf feeds/luci/applications/luci-app-serverchan
 git clone -b openwrt-18.06 https://github.com/tty228/luci-app-serverchan.git feeds/luci/applications/luci-app-serverchan
+
 # 修改欢迎banner
 cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
 
 # golang1.22
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
